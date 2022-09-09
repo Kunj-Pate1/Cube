@@ -1,0 +1,83 @@
+.root {
+    --text-primary: #FFFFFF;
+    --bg-primary: #2F00B5;
+    --bg-secondary: #4200FF;
+    --bg-ternary: #632DFF;
+    --chat-area-color:#000000;
+}
+
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex:0.15;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding-left: 0px;
+    border-left: 48px solid black;
+}
+
+.sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid black;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary)
+}
+
+.sidebar-veins {
+    flex:1;
+}
+
+.add-vein {
+    cursor: pointer;
+}
+.add-vein:hover {
+    background-color: var(--bg-ternary);
+    border-radius: 5px;
+    color: black;
+}
+
+.vein-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+}
+
+.sidebar-year, .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4200FF;
+    border-top: 2px solid black;
+}
+
+.year-input {
+    flex:1;
+    padding: 10px;
+}
+
+.profile-info{
+    flex:1;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-style:italic;
+    color: green;
+}
+
+.exit {
+    padding-top: 3px;
+}
+.exit:hover {
+    color: orangered;
+    cursor:pointer;
+}
