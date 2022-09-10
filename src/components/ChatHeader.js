@@ -5,12 +5,6 @@ import HomeIcon from '@mui/icons-material/Home';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
 import InfoIcon from '@mui/icons-material/Info';
-import { Avatar } from '@mui/material';
-import FE from '../img/FE.png'
-import SE from '../img/SE.png'
-import TE from '../img/TE.png'
-import BE from '../img/BE.png'
-
 
 function ChatHeader() {
   return (
@@ -20,10 +14,10 @@ function ChatHeader() {
             <span className="hash"><SwipeRightAltIcon/>
             Class A</span>
             </h3>
-            <Avatar src={FE}/>
-            <Avatar src={SE}/>
-            <Avatar src={TE}/>
-            <Avatar src={BE}/>
+            <p className='header-year'>FE</p>
+            <p className='header-year'>SE</p>
+            <p className='header-year'>TE</p>
+            <p className='header-year'>BE</p>
 
             <HomeIcon />
             <PeopleAltIcon />

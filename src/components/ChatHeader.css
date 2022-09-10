@@ -31,3 +31,22 @@
     background-color:var(--bg-ternary);
     height: 100%;
 }
+
+.header-year {
+    color: white;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    padding:10px;
+    border: 1px solid black;
+}
+
+.header-year:hover {
+    display: flex;
+    color: var(--chat-area-color);
+    background-color: var(--bg-ternary);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 30%;
+    font-weight:640;
+}
