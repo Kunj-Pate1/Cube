@@ -54,4 +54,3 @@ React, Redux,CSS,Material-Ui,Firebase
 
 This was a project which I made in my third year of college . It was my first time using this tech stack so there might be some useless and repeatative code blocks.
 The color-scheme and UI of this app isn't the best (ps:I hate CSS)
-

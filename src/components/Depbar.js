@@ -1,4 +1,3 @@
-import { Avatar } from '@mui/material'
 import React from 'react'
 import './Depbar.css'
 import Logo from '../img/L2.png'

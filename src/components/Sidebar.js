@@ -9,18 +9,18 @@ import LogoutIcon from '@mui/icons-material/Logout';
 function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebar-top">
+      {/* <div className="sidebar-top">
         <h3>Veins</h3>
         <AddIcon className='add-vein' />
-      </div>
+      </div> */}
 
       <div className="sidebar-veins">
-        {/* <div className="vein-header">
+        <div className="vein-header">
           <div className="vein-name">
-            <h4>~Veins</h4>
+            <h4>Veins</h4>
           </div>
             <AddIcon className='add-vein' />
-        </div> */}
+        </div>
         <div className="vein-list">
           <Vein />
           <Vein />
