@@ -11,16 +11,16 @@
     color:white;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 0px;
     padding-left: 15px;
     border-radius: 5px;
-    margin:10px;
+    margin:6px;
     border-top: 1px solid var(--bg-secondary);
     background-color: var(--bg-primary);
 }
 
 .input >form >input {
-    padding: 15px;
+    padding: 10px;
     background:transparent;
     border:none;
     outline-width: 0;
@@ -40,6 +40,10 @@
 .inputicons > .MuiSvgIcon-root {
     padding:10px;
     cursor: pointer;
+}
+
+.inputicons > .MuiSvgIcon-root:hover {
+    color: rgb(186, 184, 184);
 }
 
 .messages{
