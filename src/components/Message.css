@@ -1,8 +1,9 @@
 .message {
     display: flex;
     align-items: center;
-    padding:20px;
+    padding: 9px;
     color: white;
+    border-bottom: 1px solid rgb(28, 28, 28);
 }
 
 .info {
