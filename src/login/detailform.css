@@ -1,0 +1,17 @@
+.detail-sidebar{    
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    /* background-color: var(--bg-primary); */
+    /* color: var(--text-primary);  */
+    /* padding-left: 0px;  */
+    border-left: 48px solid black;
+}
+
+.detail-logo > img  {
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 46px;
+    width: 45px;
+}

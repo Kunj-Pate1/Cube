@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, selectUser , logout } from './features/userSlice';
 import Login from './login/Login';
 import { auth } from './firebase';
+import DetailForm from './login/detailform';
 
 function App() {
 
@@ -32,6 +33,37 @@ function App() {
 
   }, [dispatch] );
 
+
+  // const confirmemail = db.collection("user").in() 
+  // const role = db.something
+
+  // if(!user){
+  //   return(
+  //     <div className="App">
+  //       <Login />
+  //     </div>
+  //   );
+  // }
+  // else if(user.email in confirmemail){
+  //   return(
+  //     <div className='App'>
+  //           <Depbar />
+  //           <Sidebar />
+  //           <Chat />
+  //     </div>
+  //   );
+  // }
+  // else{
+  //   return(
+  //     <div className="App">
+  //       <DetailForm />
+  //     </div>
+  //   );
+  // }
+
+
+
+
   return (
     <div className="App">
 
@@ -43,6 +75,7 @@ function App() {
         </>
       ): (
         <Login />
+        // <DetailForm />
       )}
 
     </div>

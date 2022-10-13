@@ -1,27 +1,58 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Depbar.css'
 import Logo from '../img/L2.png'
+import Dep from './Dep.js'
 
-import ComputerIcon from '@mui/icons-material/Computer';
-import EngineeringIcon from '@mui/icons-material/Engineering';
-import BusinessIcon from '@mui/icons-material/Business';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
+import db, { auth } from '../firebase';
+
 
 function Depbar() {
+
+    const user = useSelector(selectUser);
+    const [departments, setDepartments] = useState([])
+
+    useEffect(() => {
+            db.collection("departments")
+            .onSnapshot(snapshot => { 
+                setDepartments(snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        department: doc.data(),
+                      })))
+                    })
+        
+    },[]);
+
+  const handleAddDep = () => {
+          const departmentName = prompt("Enter name of the new Department:");
+          const departmentLogo = prompt("Enter the URL for Department logo:");
+
+          if(departmentName) {
+            db.collection("departments").add({
+              departmentName: departmentName,
+              departmentLogo: departmentLogo,
+            })
+          }
+        }
+
   return (
     <div className="depbar">
         <div className="logo">
             <img src={Logo} alt="logo" />
         </div>
         <div className="department">
-            <ul className="dep-item">
+            <div className="dep-item">
                 
-                <li><ComputerIcon fontSize='large'/></li>
-                <li><EngineeringIcon fontSize='large'/></li>
-                <li><BusinessIcon fontSize='large'/></li>
-                <li><AddBoxIcon fontSize='large'/></li>
+                <div>
+              {departments.map(({id,department}) => ( 
+                  <Dep key={id} id={id} departmentName={department.departmentName} departmentLogo={department.departmentLogo}/>
+              ))}
+                </div> 
+                <div><AddBoxIcon onClick={handleAddDep} fontSize='large' titleAccess='Add new Department'/></div>
 
-            </ul>
+            </div>
         </div>
     </div>
   )

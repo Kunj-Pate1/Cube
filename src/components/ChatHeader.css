@@ -1,49 +1,47 @@
-.root {
-    --text-primary: #FFFFFF;
-    --bg-primary: #2F00B5;
-    --bg-secondary: #4200FF;
-    --bg-ternary: #632DFF;
-    --chat-area-color:#000000;
-}
-
 .chatheader {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     padding: 0px;
     padding-left: 3px;
-    border-left:3px solid #000000;
     background-color: var(--bg-primary);
-    color:var(--text-primary);
+    color:var(--chat-area-color);
+    border-bottom: 1px solid var(--bg-ternary);
 }
 
-.hash{
-    font-size: 20px;
+.hash-header{
+    font-size: 18px;
     padding:10px;
+    color: var(--bg-ternary);
+    border-right:1px solid var(--bg-ternary) ;
 }
 
 .chatheader > .MuiSvgIcon-root {
-    padding: 5px;
+    padding: 0px;
     cursor:pointer;
 }
 .chatheader > .MuiSvgIcon-root:hover {
     color: var(--bg-ternary);
-    background-color:var(--chat-area-color);
     height: 100%;
 }
 
 .header-year {
-    color: white;
-    padding:10px;
+    color: var(--bg-ternary);
+    background-color: var(--text-primary);
+    padding:12.4px;
     font-weight: 900;
+    border: none;
 }
 
 .header-year:hover {
     display: flex;
-    color: var(--bg-ternary);
-    background-color: var(--chat-area-color);
+    /* color: var(--bg-ternary); */
+    /* background-color: var(--text-primary); */
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    height: 100%;
+    /* height: 100%; */
+    border:1px solid var(--bg-ternary);
+    padding: 11px;
+    /* text-decoration: 2px underline var(--bg-secondary); */
 }

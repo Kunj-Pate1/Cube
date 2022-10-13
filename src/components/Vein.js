@@ -9,12 +9,14 @@ function Vein({id,channelName}) {
   const dispatch = useDispatch()
 
   return (
-    <div className='vein' onClick={() => dispatch(setChannelInfo({
-      channelId: id,
-      channelName: channelName,
-    }))}>
+    <div className='vein' 
+       onClick={() => dispatch(setChannelInfo({
+       channelId: id,
+       channelName: channelName,
+     }))}  >
         <h4>
-            <span className="hash"><SwipeRightAltIcon/></span>{channelName}
+            <span className="hash"><SwipeRightAltIcon/></span>
+            {channelName}
         </h4>
     </div>
   );

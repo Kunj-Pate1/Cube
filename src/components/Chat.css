@@ -2,21 +2,22 @@
     display: flex;
     flex-direction: column;
     flex:1;
-    background-color: black;
+    background-color: var(--bg-secondary);
     height: 100vh;
 }
 
 .input{
     display: flex;
-    color:white;
+    color: var(--text-primary);
     align-items: center;
     justify-content: space-between;
     padding: 0px;
     padding-left: 15px;
     border-radius: 5px;
     margin:6px;
-    border-top: 1px solid var(--bg-secondary);
-    background-color: var(--bg-primary);
+    border-top: 1px solid var(--bg-primary);
+    background-color: var(--bg-ternary);
+    /* background-color: #5acffe; */
 }
 
 .input >form >input {
@@ -24,7 +25,7 @@
     background:transparent;
     border:none;
     outline-width: 0;
-    color: white;
+    color: black;
     font-size: large;
     width: 100%;
 }
@@ -43,9 +44,15 @@
 }
 
 .inputicons > .MuiSvgIcon-root:hover {
-    color: rgb(186, 184, 184);
+    color: rgb(41, 40, 40);
 }
 
 .messages{
     flex:1;
+}
+
+
+::placeholder {
+    color: var(--text-primary);
+    opacity: 0.6;
 }
