@@ -126,23 +126,23 @@ function ChatHeader( {/*{ channelName } */}) {
           <Year key={id} id={id} yearName={year.yearName}/>
         ))}
             
-        <HomeIcon titleAccess='Home Page'/>
-        <PeopleAltIcon titleAccess='Members' />
-        <InfoIcon titleAccess='About us' />
-        <SettingsIcon titleAccess='My Profile' />
+        {/* <HomeIcon titleAccess='Home Page'/>
+        <PeopleAltIcon titleAccess='Members' /> */}
+        {/* <InfoIcon titleAccess='About us' /> */}
+        {/* <SettingsIcon titleAccess='My Profile' /> */}
       </div>
     )
   }
-  else{
-    return (
-      <div className="chatheader" >
-        <HomeIcon titleAccess='Home Page'/>
-        <PeopleAltIcon titleAccess='Members' />
-        <InfoIcon titleAccess='About us' />
-        <SettingsIcon titleAccess='My Profile' />
-      </div>
-    )
-  }
+  // else{
+  //   return (
+  //     <div className="chatheader" >
+  //       <HomeIcon titleAccess='Home Page'/>
+  //       <PeopleAltIcon titleAccess='Members' />
+  //       {/* <InfoIcon titleAccess='About us' /> */}
+  //       <SettingsIcon titleAccess='My Profile' />
+  //     </div>
+  //   )
+  // }
 }
 
 export default ChatHeader

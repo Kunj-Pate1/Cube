@@ -13,6 +13,7 @@ import db from '../firebase'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { useRef } from 'react';
 
 function Chat() {
 
@@ -25,7 +26,9 @@ function Chat() {
     const channelName = useSelector(selectChannelName);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
-    
+
+    const dummy = useRef()
+
     useEffect(() => {
         if (channelId && departmentId && yearId) {
             db.collection("departments").doc(departmentId).collection("years").doc(yearId).collection("channels").doc(channelId).collection('messages').orderBy('timestamp','asc')
@@ -33,6 +36,7 @@ function Chat() {
                 setMessages(snapshot.docs.map((doc) => doc.data()))
             ); 
         }
+        
     },[channelId,yearId,departmentId]);
 
     const sendMessage = e => {
@@ -45,20 +49,26 @@ function Chat() {
         });
 
         setInput("");
+
+        dummy.current.scrollIntoView({ behaviour: 'smooth'})
+
     };
 
   return (
     <div className="chat">
         <ChatHeader channelName={ channelName }/>
         {/* <ChatHeader /> */}
-        <div className="messages">
-            {messages.map((message) => (
-                <Message 
-                    timestamp={message.timestamp}
-                    message={message.message}
-                    user={message.user}
-                />
-             ))} 
+        <div className="msg-scroll">
+            <div className="messages">
+                {messages.map((message) => (
+                    <Message 
+                        timestamp={message.timestamp}
+                        message={message.message}
+                        user={message.user}
+                    />
+                ))}
+                <div ref={dummy}></div>
+            </div>
         </div>
         <div className="input">
             <AddCircleIcon />

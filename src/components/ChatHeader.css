@@ -10,14 +10,15 @@
 }
 
 .hash-header{
-    font-size: 18px;
-    padding:10px;
+    font-size: 28px;
+    padding: 0px;
     color: var(--bg-ternary);
-    border-right:1px solid var(--bg-ternary) ;
+    /* border-right:1px solid var(--bg-ternary) ; */
 }
 
 .chatheader > .MuiSvgIcon-root {
     padding: 0px;
+    margin: 9.5px;
     cursor:pointer;
 }
 .chatheader > .MuiSvgIcon-root:hover {

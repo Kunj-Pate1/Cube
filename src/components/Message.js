@@ -3,6 +3,8 @@ import React from 'react'
 import './Message.css'
 
 function Message( {timestamp , message ,  user}) {
+
+
   return (
     <div className="message">
         <Avatar src={user.photo}/>
@@ -16,6 +18,7 @@ function Message( {timestamp , message ,  user}) {
             </h4>
             <p>{message}</p>
             {/* <p>message</p> */}
+            
         </div>
     </div>
   )
