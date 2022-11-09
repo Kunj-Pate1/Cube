@@ -9,7 +9,7 @@
     .
     .
 
-![Logo](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/L2.png)
+![Logo]()
 
 
 ## Features

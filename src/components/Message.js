@@ -2,8 +2,9 @@ import { Avatar } from '@mui/material'
 import React from 'react'
 import './Message.css'
 
-function Message( {timestamp , message ,  user}) {
 
+
+function Message( {timestamp , message ,  user}) {
 
   return (
     <div className="message">

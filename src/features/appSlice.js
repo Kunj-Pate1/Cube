@@ -9,6 +9,9 @@ export const appSlice = createSlice({
     yearName: null,
     departmentId: null,
     departmentName: null,
+
+    studentYear:null,
+
   },
   reducers: {
     setChannelInfo: (state,action) => {
@@ -24,11 +27,24 @@ export const appSlice = createSlice({
       state.departmentName = action.payload.departmentName;
       state.departmentLogo = action.payload.departmentLogo;
     },
+
+
+    setStudentInfo: (state,action) => {
+      state.studentYear = action.payload.studentYear;
+    }
+
+
   },
 });
 
 export const { setYearInfo,setDepInfo } = appSlice.actions;
 export const { setChannelInfo } = appSlice.actions;
+
+
+
+export const { setStudentInfo } = appSlice.actions;
+export const selectStudentYear = (state) => state.app.studentYear;
+
 
 export const selectChannelId = (state) => state.app.channelId;
 export const selectYearId = (state) => state.app.yearId;

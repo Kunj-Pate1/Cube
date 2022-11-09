@@ -7,10 +7,15 @@ import { auth,provider } from '../firebase';
 import db from '../firebase'
 import { useEffect, useState } from 'react'
 import Dep from '../components/Dep'
-import { useSelector } from 'react-redux';
-import { selectDepId, selectDepName } from '../features/appSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectDepId, selectDepName, selectStudentYear, setStudentInfo } from '../features/appSlice';
+
 
 function Login() {
+
+ const dispatch = useDispatch()
+ const studyear = useSelector(selectStudentYear)
+
  const signIn = () => {
 
   const code = 10560;
@@ -34,28 +39,28 @@ function Login() {
      
      if(studentYear == "FE" || studentYear == "SE" || studentYear == "TE" || studentYear == "BE"){
        alert("U have selected " + departmentName + " and you are in " + studentYear);
+
        auth.signInWithPopup(provider).catch((error) => alert(error.message));
+       dispatch(setStudentInfo({ studentYear : studentYear}));
+
       }
       else{
         alert("Enter the Year correctly");
       }
       
-      return studentYear;
     }
     else {
       alert("Select Department by clicking on the displayed departments.")
     }
 
-  
 
   };
 
-
   const [departments, setDepartments] = useState([])
-  // const departmentId = useSelector(selectDepId);
   const departmentName = useSelector(selectDepName);
 
  useEffect(() => {
+
   db.collection("departments")
   .onSnapshot(snapshot => { 
       setDepartments(snapshot.docs.map(doc => ({
@@ -64,10 +69,11 @@ function Login() {
             })))
           })
 
+          
+
   },[]);
 
 
- if(departmentName == null){
       return (
         // <div className="login">
         //     <div className="login-logo">
@@ -84,7 +90,7 @@ function Login() {
           <div className="details-logo">
                 <img src={ Logo } alt="logo" />
                 <p>CUBE</p>
-                  
+
                   <div className='select-dep'>
                       
                     {departments.map(({id,department}) => ( 
@@ -96,6 +102,7 @@ function Login() {
           <div className='grid-container-login'>
             <div className="grid-student">
               <p>Student Login</p>
+                {/* <p>{studyear}</p> */}
               <Button onClick={details}>Sign-In</Button>
             </div>
             <div className="grid-teacher">
@@ -105,14 +112,7 @@ function Login() {
           </div>
         </div>
       )
-    }
-    else{
-      return(
-        <div>
-          
-        </div>
-      )
-    }
+
  }
 
 export default Login;

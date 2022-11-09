@@ -9,6 +9,8 @@ import Login from './login/Login';
 import { auth } from './firebase';
 import DetailForm from './login/detailform';
 
+import { selectDepName, selectStudentYear } from './features/appSlice';
+
 function App() {
 
   const dispatch = useDispatch();
@@ -34,36 +36,30 @@ function App() {
   }, [dispatch] );
 
 
-  // const confirmemail = db.collection("user").in() 
-  // const role = db.something
-
-  // if(!user){
-  //   return(
-  //     <div className="App">
-  //       <Login />
-  //     </div>
-  //   );
-  // }
-  // else if(user.email in confirmemail){
-  //   return(
-  //     <div className='App'>
-  //           <Depbar />
-  //           <Sidebar />
-  //           <Chat />
-  //     </div>
-  //   );
-  // }
-  // else{
-  //   return(
-  //     <div className="App">
-  //       <DetailForm />
-  //     </div>
-  //   );
-  // }
+  const studentyear = useSelector(selectStudentYear)
+  const departmentName = useSelector(selectDepName)
 
 
+if(departmentName && studentyear ){
 
+  return (
+    <div className="App">
 
+      {user ? (
+        <>
+          <Sidebar />
+          <Chat />
+        </>
+      ): (
+        <Login />
+        // <DetailForm />
+      )}
+
+    </div>
+  )
+
+}
+else {
   return (
     <div className="App">
 
@@ -80,6 +76,26 @@ function App() {
 
     </div>
   );
+}
+
+
+
+  // return (
+  //   <div className="App">
+
+  //     {user ? (
+  //       <>
+  //         <Depbar />
+  //         <Sidebar />
+  //         <Chat />
+  //       </>
+  //     ): (
+  //       <Login />
+  //       // <DetailForm />
+  //     )}
+
+  //   </div>
+  // );
 }
 
 export default App;
