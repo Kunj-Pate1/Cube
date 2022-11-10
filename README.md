@@ -11,6 +11,9 @@
 
 ![Logo](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/L2.png)
 
+## Link to the website
+
+[Cube](https://cubechat.netlify.app/)
 
 ## Features
 
