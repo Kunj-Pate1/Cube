@@ -45,11 +45,11 @@ React, Redux,CSS,Material-Ui,Firebase
 
 ## Screenshots
 
-![Login Page](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/login.png) 
+![Login Page](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/login-page.png) 
 
 ![Student Page](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/Student-side.png)
 
-![Prof Page] (https://github.com/Kunj-Pate1/Cube/blob/main/src/img/Prof-side.png)
+![Prof Page](https://github.com/Kunj-Pate1/Cube/blob/main/src/img/Prof-side.png)
 
 ## Appendix
 
