@@ -14,7 +14,7 @@ messages.Our app Cube resolves this common problem by introducing sub-grouping.
 
 ## Link to the website
 
-[Cube](https://cubechat.netlify.app/)
+[Have fun!!](https://cubechat.netlify.app/)
 
 ## Features
 
